@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Information Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f1f3f4, #e0e0e0);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 32px;
+      max-width: 640px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-header {
+      border-bottom: 4px solid #673ab7;
+      margin-bottom: 24px;
+    }
+
+    .form-header h1 {
+      margin: 0;
+      padding-bottom: 12px;
+      font-size: 28px;
+      color: #202124;
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #202124;
+      font-weight: 500;
+    }
+
+    .form-group .required::after {
+      content: " *";
+      color: #d93025;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #673ab7;
+      box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.2);
+      outline: none;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .submit-btn {
+      background-color: #673ab7;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #5e35b1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 650px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Contact Information Form</h1>
+    </div>
+    <form action="thankyou.html" method="get">
+      <div class="form-group">
+        <label for="fullName" class="required">Full Name</label>
+        <input type="text" id="fullName" name="fullName" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="contactNumber" class="required">Contact Number</label>
+        <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required inputmode="tel" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="required">Email Address</label>
+        <input type="email" id="email" name="email" class="form-control" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" name="department" class="form-control">
+          <option value="">-- Select Department --</option>
+          <option value="HR">HR</option>
+          <option value="Sales">Sales</option>
+          <option value="Development">Development</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="required">Gender</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
